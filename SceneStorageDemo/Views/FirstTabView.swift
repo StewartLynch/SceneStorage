@@ -53,6 +53,5 @@ struct FirstTabView: View {
 }
 
 #Preview {
-    @Previewable @State var sortOrder = SortOrder.asc
     FirstTabView()
 }
