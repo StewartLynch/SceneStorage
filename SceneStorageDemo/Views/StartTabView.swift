@@ -18,7 +18,7 @@ import SwiftUI
 struct StartTabView: View {
     var body: some View {
             TabView {
-                Tab("Second", systemImage: "1.circle") {
+                Tab("First", systemImage: "1.circle") {
                     FirstTabView()
                 }
                 Tab("Second", systemImage: "2.circle") {
