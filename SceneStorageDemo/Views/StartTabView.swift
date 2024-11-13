@@ -16,15 +16,18 @@
 import SwiftUI
 
 struct StartTabView: View {
+//    @SceneStorage("sortOrder") private var sortOrder: SortOrder = .asc
+//    @SceneStorage("selectedTab") private var selectedTab = 0
+    @SceneStorage("appState") private var appState = AppState()
     var body: some View {
-            TabView {
-                Tab("Second", systemImage: "1.circle") {
-                    FirstTabView()
+        TabView(selection: $appState.selectedTab) {
+            Tab("First", systemImage: "1.circle", value: 0) {
+                FirstTabView(sortOrder: $appState.sortOrder)
                 }
-                Tab("Second", systemImage: "2.circle") {
+            Tab("Second", systemImage: "2.circle", value: 1) {
                     SecondTabView()
                 }
-                Tab("Third", systemImage: "3.circle") {
+            Tab("Third", systemImage: "3.circle", value: 2) {
                     ThirdTabView()
                 }
             }

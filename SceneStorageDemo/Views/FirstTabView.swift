@@ -17,7 +17,7 @@
 import SwiftUI
 
 struct FirstTabView: View {
-    @State var sortOrder: SortOrder = .asc
+    @Binding var sortOrder: SortOrder
     
     @State private var strings: [String] = [
            "Apple", "Banana", "Cherry", "Date", "Elderberry",
@@ -53,5 +53,6 @@ struct FirstTabView: View {
 }
 
 #Preview {
-    FirstTabView()
+    @Previewable @State var sortOrder: SortOrder = .asc
+    FirstTabView(sortOrder: $sortOrder)
 }

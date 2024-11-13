@@ -14,7 +14,7 @@
 
 
 
-enum SortOrder: String {
+enum SortOrder: String, Codable {
     case asc, desc
     
     var buttonRotation: Double {
